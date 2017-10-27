@@ -5,9 +5,8 @@ will return the lat and long and eventually the local weather report.
 
 const yargs = require('yargs');
 
-let geocode = require('./geocode/geocode');
+const axios = require('axios');
 
-let weather = require('./weatherinfo/weatherinfo');
 
 const argv = yargs.option({
   address:{
@@ -21,22 +20,28 @@ const argv = yargs.option({
   .alias('help', 'h')
   .argv;
 
+  let encodedaddress = encodeURIComponent(argv.address);
+  let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}`;
 
-geocode.getResults(argv.address, (errorMessage, results)=>{
-  if(errorMessage){
-    console.log(errorMessage);
-  }
-  else{
-    // console.log(JSON.stringify(results,undefined,2))
-    console.log();
-    weather.getWeather(results.latitude,results.longitude,(errorMessage,weatherResults)=>{
-      if(errorMessage){
-        console.log(errorMessage);
-      }
-      else{
-        console.log(`currently the weather is ${weatherResults.temperature}, however it feels like it's ${weatherResults.actualTemp}`);
-      }
+  axios.get(geocodeUrl).then((response) => {
+    if(response.data.status==='ZERO_RESULTS'){
+      throw new Error('Unable to find address');
+    }
+    let lat = response.data.results[0].geometry.location.lat;
+    let lng = response.data.results[0].geometry.location.lng;
+    let weatherinfo =  `https://api.darksky.net/forecast/831d6b9cc3dba230ada7a14bdb0c0a9b/${lat},${lng}`;
+    console.log(response.data.result[0].formatted_address);
+    return axios.get(weatherinfo);
+  }).then((response) => {
+    let currentTemp = response.data.currently.temperature;
+    let apparentTemp = response.data.currently.apparentTemperature;
 
-    });
-  }
-});
+    console.log(`It's currently ${currentTemp}, however it feels like ${apparentTemp}.`);
+  }).catch((e) => {
+    if(e.code==='ENOTFOUND'){
+      console.log('unable to connect');
+    }
+    else{
+      console.log(e.message);
+    }
+  });
