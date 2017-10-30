@@ -25,6 +25,11 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
     </li>
       <li>Changes done to the project so far
     <ul>
+      <li>
+    </ul>
+    </li>
+<h1> Changes Log: 
+    <ul>
       <li>Switched from callback functions to the ES6 Promises
         <ul>
           <li>
@@ -33,9 +38,5 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
         </ul>
       </li>
     </ul>
-    <ul>
-      <li>
-    </ul>
-    </li>
-
+</h1>
 </ul>
