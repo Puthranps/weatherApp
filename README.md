@@ -35,3 +35,14 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
       </li>
     </ul>
 </ul>
+<h1>Possible ideas that can be implemented?</h1>
+  <ul>
+    <li>
+    Obviously adding a user interface using html,css will try to explore using either bootstrap or bulma for the site
+    </li>
+    <li>
+    Other ideas could be the possibility of add dynamic weather animations based on the current weather in your searched area. 
+    </li>
+  </ul>
+  
+  <h2>Please be sure to email on me what I can do and what you believe I should add and thanks for taking your time to check out my code.</h2> 
