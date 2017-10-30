@@ -23,11 +23,6 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
       <li>Overall ease and use</li>
     </ul>
     </li>
-      <li>Changes done to the project so far
-    <ul>
-      <li>
-    </ul>
-    </li>
 <h1> Changes Log:
 </h1>
     <ul>
