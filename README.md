@@ -28,7 +28,8 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
       <li>
     </ul>
     </li>
-<h1> Changes Log: 
+<h1> Changes Log:
+</h1>
     <ul>
       <li>Switched from callback functions to the ES6 Promises
         <ul>
@@ -38,5 +39,4 @@ Hello everyone, thank you for viewing the code for this application. It's a simp
         </ul>
       </li>
     </ul>
-</h1>
 </ul>
