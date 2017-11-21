@@ -1,6 +1,6 @@
 # WeatherApp
 
-Hello everyone, thank you for viewing the code for this application. It's a simple Node.js application that using the Google Maps API and Darksky API. 
+Hello everyone, thank you for viewing the code for this application. It's a simple Node.js application that uses the Google Maps API and Darksky API. 
 
 
 <h1>What are the purposes of each of the tools?</h1>
