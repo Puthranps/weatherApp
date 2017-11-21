@@ -3,7 +3,7 @@
 Hello everyone, thank you for viewing the code for this application. It's a simple Node.js application that using the Google Maps API and Darksky API. 
 
 
-<h1>What are the purposes of each of the tools?</h1>
+<h1 style="color:red;">What are the purposes of each of the tools?</h1>
 <ul>
   <li>Node.js
     <ul>
