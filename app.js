@@ -4,10 +4,7 @@ will return the lat and long and eventually the local weather report.
 */
 
 const yargs = require('yargs');
-
 const axios = require('axios');
-
-
 const argv = yargs.option({
   address:{
     demand: true,
